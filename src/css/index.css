@@ -1,0 +1,15 @@
+.header {
+    justify-content: center;
+    text-align: center;
+}
+
+.header img{
+    width: 30rem;
+}
+
+.champCompendium {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+}
