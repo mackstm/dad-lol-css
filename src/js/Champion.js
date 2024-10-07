@@ -5,7 +5,6 @@ export default class Champion {
         this.id = data.id;
         this.name = data.name;
         this.title = data.title;
-        this.skins = [];
     }
 
     getId() {
@@ -18,14 +17,5 @@ export default class Champion {
 
     getTitle() {
         return this.title;
-    }
-
-    getSkins() {
-        return this.skins;
-    }
-
-    setSkins(skins) {
-        this.skins = skins;
-        return this;
     }
 }

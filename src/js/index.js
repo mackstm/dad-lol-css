@@ -2,7 +2,6 @@
 import Champion from './Champion.js';
 
 var champions = [];
-var skins = [];
 const startChampions = async () => {
 
         await fetch("https://ddragon.leagueoflegends.com/cdn/14.19.1/data/es_ES/champion.json")
@@ -11,10 +10,8 @@ const startChampions = async () => {
             }).then(function(result) {
                 for (const key in result.data) {
                     let champion = new Champion(result.data[key]);
-                    getSkins(champion);
                     pushChampion(champion);
                 }
-
             });
             
     
@@ -23,18 +20,17 @@ const startChampions = async () => {
 
 startChampions();
 
-const getSkins = async (champion) => {
-    
-    await fetch("http://ddragon.leagueoflegends.com/cdn/14.9.1/data/en_US/champion/" + champion.getId() + ".json")
-        .then(function(result) {
-            return result.json();
-        }).then(function(resultJson) {
-            for (const key in resultJson.data[champion.getId()]) {
-                console.log(resultJson.data[champion.getId()].skins);
-            }
-        });
-    return skins;
-}
+// const obtainSkins = async (champion) => {
+//     await fetch("http://ddragon.leagueoflegends.com/cdn/14.9.1/data/en_US/champion/" + champion.getId() + ".json")
+//         .then(function(result) {
+//             return result.json();
+//         }).then(function(resultJson) {
+//             let data = resultJson.data[champion.getId()];
+//             for (const key in data.skins) {
+//                 champion.addSkin(data.skins[key].num);
+//             }
+//         });
+// }
 
 function pushChampion(champion) {
     champions.push(champion);
@@ -45,9 +41,9 @@ const showChampions = async () => {
     for (let i = 0; i < champions.length; i++) {
         champCompendium.innerHTML += `
             <div class="card">
-                <img class="champSplash" src=""/>
-                <p class="champName">${champions[i].name}</p>
-                <p class="champTitle">${champions[i].title}</p>
+                <img class="champSplash" src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champions[i].id}_0.jpg"/>
+                <div class="champName">${champions[i].name}</div>
+                <div class="champTitle">${champions[i].title}</div>
             </div>
         `;
     }

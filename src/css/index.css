@@ -1,15 +1,40 @@
+body {
+    background-color: rgb(56, 51, 85);
+}
+
 .header {
     justify-content: center;
     text-align: center;
 }
 
 .header img{
-    width: 30rem;
+    width: 10rem;
 }
 
 .champCompendium {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     width: 100%;
+}
+
+.champSplash {
+    width: 330px;
+}
+
+.champName, .champTitle {
+    justify-content: center;
+    text-align: center;
+}
+
+.champName {
+    background-color: rgb(216, 216, 42);
+}
+
+.champTitle {
+    background-color: rgb(187, 187, 187);
+}
+
+.card {
+
 }
