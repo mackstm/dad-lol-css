@@ -13,28 +13,41 @@ body {
 
 .champCompendium {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     width: 100%;
 }
 
-.champSplash {
-    width: 330px;
-}
-
-.champName, .champTitle {
+.champSplash, .champName, .champTitle {
     justify-content: center;
     text-align: center;
 }
 
-.champName {
+.champSplash {
+    transition: 0.5s;
+    filter: blur(8px);
+}
+
+.champSplash:hover {
+    transition: 0.5s;
+    filter: none;
+    cursor: pointer;
+}
+
+/* .champName {
     background-color: rgb(216, 216, 42);
 }
 
 .champTitle {
     background-color: rgb(187, 187, 187);
-}
+} */
 
 .card {
+    transition: 0.5s;
+    background: linear-gradient(rgb(90, 100, 128), rgb(56, 51, 85));
+}
 
+.card:hover {
+    transition: 0.5s;
+    background-color: rgb(90, 100, 128);
 }
