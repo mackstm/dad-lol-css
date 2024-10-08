@@ -104,13 +104,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 900px) {
-  .champCompendium {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 601px) {
   .champCompendium {
     grid-template-columns: repeat(6, 1fr);
   }
