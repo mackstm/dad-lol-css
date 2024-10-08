@@ -14,9 +14,14 @@ const startChampions = async () => {
                     pushChampion(champion);
                 }
             });
-            
+        
+        if(champions.length > 0) {
+            await showChampions();
+        }   else {
+            console.error("No se han cargado los campeones.");
+        }
     
-    await showChampions();
+    
 };
 
 startChampions();

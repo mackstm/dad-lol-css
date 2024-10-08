@@ -13,24 +13,27 @@ body {
 
 .champCompendium {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     width: 100%;
 }
 
 .champSplash, .champName, .champTitle {
+    width: 19rem;
     justify-content: center;
     text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: rgb(214, 214, 214);
 }
 
 .champName {
-    width: 308px;
-    background-color: rgb(216, 216, 42);
+    background: linear-gradient(rgb(31, 31, 31), rgb(212, 175, 55));
 }
 
 .champTitle {
-    width: 308px;
-    background-color: rgb(187, 187, 187);
+    background: linear-gradient(rgb(212, 175, 55), rgb(31, 31, 31))
 }
 
 .card {
@@ -49,16 +52,20 @@ body {
   
   .champSplash {
     mask-image: linear-gradient(135deg,#000 25%,rgba(255, 255, 255, 0.491) 50%,#000 75%);
-    mask-size: 50%;
+    mask-size: 500%;
+  }
+
+  .card:hover {
+    animation: cardFloat 2s infinite alternate;
   }
 
   .card:hover .cardInner {
-
+    cursor: pointer;
     transform: rotateY(180deg);
   }
 
   .card:hover .cardInner .front .champSplash {
-    animation: shine 2s ease;
+    animation: cardShine 2s ease-in infinite alternate;
   }
   
   .front, .back, .cardBack {
@@ -77,14 +84,7 @@ body {
     transform: rotateY(180deg);
   }
 
-
-  @keyframes floatAnim {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, -15px); }
-    100%   { transform: translate(0, 0px); }    
-}
-
-@keyframes shine {
+@keyframes cardShine {
   0% {
       mask-position: 0%;
 
@@ -92,3 +92,22 @@ body {
       mask-position: -120%;
   }
 }
+
+@keyframes cardFloat {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, -15px); }
+  100%   { transform: translate(0, -0px); }    
+}
+
+@media only screen and (min-width: 700px) {
+  .champCompendium {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .champCompendium {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
