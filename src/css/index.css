@@ -99,7 +99,7 @@ body {
   100%   { transform: translate(0, -0px); }    
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   .champCompendium {
     grid-template-columns: repeat(4, 1fr);
   }
