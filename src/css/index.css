@@ -11,12 +11,6 @@ body {
     width: 10rem;
 }
 
-.champCompendium {
-    display: grid;
-    gap: 20px;
-    width: 100%;
-}
-
 .champSplash, .champName, .champTitle {
     width: 19rem;
     justify-content: center;
@@ -71,6 +65,7 @@ body {
     position: absolute;
     margin: auto;
     width: 100%;
+    border-radius: 15px;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -78,6 +73,8 @@ body {
 
   
   .front {
+
+    overflow: hidden;
     transform: rotateY(180deg);
   }
 
@@ -96,15 +93,26 @@ body {
   100%   { transform: translate(0, -0px); }    
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .champCompendium {
-    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
+  .champCompendium {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
   .champCompendium {
     grid-template-columns: repeat(6, 1fr);
+    display: grid;
+    gap: 20px;
+    width: 100%;
   }
 }
-
