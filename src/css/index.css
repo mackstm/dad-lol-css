@@ -13,7 +13,6 @@ body {
 
 .champCompendium {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     width: 100%;
 }
@@ -99,13 +98,19 @@ body {
   100%   { transform: translate(0, -0px); }    
 }
 
+@media only screen and (max-width: 600px) {
+  .champCompendium {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media only screen and (min-width: 900px) {
   .champCompendium {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1200px) {
   .champCompendium {
     grid-template-columns: repeat(6, 1fr);
   }
