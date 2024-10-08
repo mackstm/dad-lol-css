@@ -93,13 +93,13 @@ body {
   100%   { transform: translate(0, -0px); }    
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1080px) {
   .champCompendium {
     width: 100%;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1081px) {
   .champCompendium {
     grid-template-columns: repeat(4, 1fr);
     display: grid;
