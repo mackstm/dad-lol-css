@@ -1,5 +1,6 @@
 // Importamos la clase champion desde el archivo champion.js
 import Champion from './Champion.js';
+import cardBack from '../assets/images/card_back.jpg';
 
 var champions = [];
 const startChampions = async () => {
@@ -27,12 +28,21 @@ function pushChampion(champion) {
 const showChampions = async () => {
     const champCompendium = document.getElementById("champCompendium");
     for (let i = 0; i < champions.length; i++) {
+        
         champCompendium.innerHTML += `
-            <div class="card">
-                <img class="champSplash" src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champions[i].id}_0.jpg"/>
-                <div class="champName">${champions[i].name}</div>
-                <div class="champTitle">${champions[i].title}</div>
+            <div class="card" id="card">
+                <div class="cardInner">
+                    <div class="front" id="front">
+                        <img class="champSplash" src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champions[i].id}_0.jpg"/>
+                        <div class="champName">${champions[i].name}</div>
+                        <div class="champTitle">${champions[i].title}</div>
+                    </div>
+                    <div class="back">
+                        <img class="cardBack" src="${cardBack}"/>
+                    </div>
+                </div>
             </div>
         `;
     }
 }
+
