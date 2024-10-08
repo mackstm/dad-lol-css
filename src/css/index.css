@@ -71,7 +71,6 @@ body {
     position: absolute;
     margin: auto;
     width: 100%;
-    border-radius: 15px;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -79,7 +78,6 @@ body {
 
   
   .front {
-    overflow: hidden;
     transform: rotateY(180deg);
   }
 
