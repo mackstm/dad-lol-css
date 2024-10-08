@@ -47,9 +47,18 @@ body {
     transform-style: preserve-3d;
   }
   
+  .champSplash {
+    mask-image: linear-gradient(135deg,#000 25%,rgba(255, 255, 255, 0.491) 50%,#000 75%);
+    mask-size: 50%;
+  }
+
   .card:hover .cardInner {
 
     transform: rotateY(180deg);
+  }
+
+  .card:hover .cardInner .front .champSplash {
+    animation: shine 2s ease;
   }
   
   .front, .back, .cardBack {
@@ -73,4 +82,13 @@ body {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, -15px); }
     100%   { transform: translate(0, 0px); }    
+}
+
+@keyframes shine {
+  0% {
+      mask-position: 0%;
+
+  } 100% {
+      mask-position: -120%;
+  }
 }

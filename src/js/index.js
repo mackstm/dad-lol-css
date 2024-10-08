@@ -34,8 +34,10 @@ const showChampions = async () => {
                 <div class="cardInner">
                     <div class="front" id="front">
                         <img class="champSplash" src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champions[i].id}_0.jpg"/>
-                        <div class="champName">${champions[i].name}</div>
-                        <div class="champTitle">${champions[i].title}</div>
+                        <div class="champInfo">
+                            <div class="champName">${champions[i].name}</div>
+                            <div class="champTitle">${champions[i].title}</div>
+                        </div>
                     </div>
                     <div class="back">
                         <img class="cardBack" src="${cardBack}"/>
